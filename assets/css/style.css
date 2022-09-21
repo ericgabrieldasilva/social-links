@@ -38,15 +38,23 @@ header{
 header img{
   border-radius: 50%;
   width: 200px;
+  height: 200px;
   border: 2px solid var(--purple);
   padding: 6px;
   margin: 0 auto;
+  transition: padding 0.3s;
+  animation: fromBottom 0.3s 0.3s backwards;
+}
+
+header img:hover{
+  padding: 0;
 }
 
 header a{
   color: var(--purple);
   line-height: 24px;
   margin-block: 1rem 32px;
+  animation: fromBottom 0.3s 0.4s backwards;
 }
 
 /* ========== MAIN ========== */
@@ -55,6 +63,22 @@ main ul{
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+main ul li:nth-child(1){
+  animation: fromBottom 0.3s 0.5s backwards;
+}
+
+main ul li:nth-child(2){
+  animation: fromBottom 0.3s 0.6s backwards;
+}
+
+main ul li:nth-child(3){
+  animation: fromBottom 0.3s 0.7s backwards;
+}
+
+main ul li:nth-child(4){
+  animation: fromBottom 0.3s 0.8s backwards;
 }
 
 main li a{
@@ -85,6 +109,28 @@ footer ul{
   gap: 30px;
 
   margin-block: 68px;
+  animation: fromBottom 0.3s 0.9s backwards;
+}
+
+footer ul img{
+  transition: transform 0.3s;
+}
+
+footer ul img:hover{
+  transform: scale(1.1);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fromBottom{
+  from{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ========== MEDIA QUERIES ========== */
